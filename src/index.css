@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* شريط التمرير الأساسي */
+::-webkit-scrollbar {
+  width: 12px; /* عرض شريط التمرير */
+  background-color: #2c2c2c; /* لون الخلفية الداكن */
+}
+
+/* إبهام شريط التمرير */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #4d4d4d, #1f1f1f); /* تدريج رمادي داكن */
+  border-radius: 6px; /* زوايا مستديرة */
+}
+
+/* التأثير عند التمرير */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, #6b6b6b, #2c2c2c); /* لون عند التمرير */
+}
+
+/* شريط التمرير للفايرفوكس */
+html {
+  scrollbar-color: #4d4d4d #2c2c2c; /* الإبهام والخلفية */
+}
+
+  
