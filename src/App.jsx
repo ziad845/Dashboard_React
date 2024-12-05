@@ -7,12 +7,12 @@ import {
 } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
+import { Outlet } from "react-router-dom";
 
-import TopBar from "./components/TopBar";
+import TopBar from './components/TopBar';
+
 import SideBar from "./components/SideBar";
 import { getDesignTokens } from "./theme";
-import { Outlet } from "react-router-dom";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",

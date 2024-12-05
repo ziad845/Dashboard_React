@@ -1,19 +1,17 @@
 import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';  // تصحيح الاستيراد
 import IconButton from '@mui/material/IconButton';
-import { Box, InputBase, Stack, Typography, useTheme } from '@mui/material';
+import { Box, InputBase, Stack, useTheme } from '@mui/material';
 import { Toolbar } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import { styled } from '@mui/material/styles';
 import { alpha } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
-import { Delete } from '@mui/icons-material';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 const drawerWidth = 240;
 
@@ -74,7 +72,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const TopBar = ({ open, handleDrawerOpen, setMode }) => {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <StyledAppBar position="fixed" open={open}>
       <Toolbar>
@@ -101,60 +99,43 @@ const TopBar = ({ open, handleDrawerOpen, setMode }) => {
           />
         </Search>
 
-
         <Box flexGrow={1} />
 
-
-
         <Stack direction={"row"}>
-
-
-          {theme.palette.mode === "light" ? <IconButton
-            onClick={() => {
-              localStorage.setItem("currentmode", theme.palette.mode === "dark"?"light" :"dark"  )
-              setMode((prevMode) =>
-                prevMode === 'light' ? 'dark' : 'light',
-              );
-            }} color='inherit'>
-            <LightModeOutlinedIcon />
-          </IconButton >
-
-            : <IconButton
-              onClick={
-                () => {
-                  localStorage.setItem("currentmode", theme.palette.mode === "dark"?"light" :"dark"  )
-                  setMode((prevMode) =>
-                    prevMode === 'light' ? 'dark' : 'light',
-                  );
-                }
-              }
-
-              color='inherit'>
+          {theme.palette.mode === "light" ? (
+            <IconButton
+              onClick={() => {
+                localStorage.setItem("currentmode", theme.palette.mode === "dark" ? "light" : "dark");
+                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+              }}
+              color="inherit"
+            >
+              <LightModeOutlinedIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              onClick={() => {
+                localStorage.setItem("currentmode", theme.palette.mode === "dark" ? "light" : "dark");
+                setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+              }}
+              color="inherit"
+            >
               <DarkModeOutlinedIcon />
-            </IconButton>}
+            </IconButton>
+          )}
 
-
-
-
-
-
-
-          <IconButton color='inherit'>
+          <IconButton color="inherit">
             <NotificationsOutlinedIcon />
           </IconButton>
 
-          <IconButton color='inherit'>
+          <IconButton color="inherit">
             <SettingsOutlinedIcon />
           </IconButton>
 
-          <IconButton color='inherit'>
+          <IconButton color="inherit">
             <PersonOutlineOutlinedIcon />
           </IconButton>
-
-
         </Stack>
-
-
       </Toolbar>
     </StyledAppBar>
   );
