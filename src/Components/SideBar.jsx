@@ -139,7 +139,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
         height: open ? 88 : 44,
         my: 1, border: "2px solid grey",
         transition: "0.25s"
-      }} alt="Remy Sharp" src='./../../public/ziad.jpg' />
+      }} alt="Remy Sharp" src='https://www.facebook.com/photo/?fbid=1342650569659194&set=a.101082950482635' />
       <Typography align='center' sx={{ fontSize: open ? 17 : 0, transition: "0.25s" }}  >Ziad Khaled</Typography>
       <Typography align='center' sx={{ fontSize: open ? 15 : 0, transition: "0.25s", color: theme.palette.info.main }}  >Admin</Typography>
 
